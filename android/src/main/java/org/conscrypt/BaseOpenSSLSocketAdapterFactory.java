@@ -16,10 +16,7 @@
 
 package org.conscrypt;
 
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.Socket;
-import java.net.UnknownHostException;
+import java.net.Socket
 import javax.net.ssl.SSLSocketFactory;
 
 public abstract class BaseOpenSSLSocketAdapterFactory extends SSLSocketFactory {
@@ -46,13 +43,13 @@ public abstract class BaseOpenSSLSocketAdapterFactory extends SSLSocketFactory {
     }
 
     @Override
-    public Socket createSocket(String hostname, int port)
+    public Socket createSocket(String hostname, int addr)
             throws IOException, UnknownHostException {
-        return wrap((OpenSSLSocketImpl) delegate.createSocket(hostname, port));
+        return wrap((OpenSSLSocketImpl) delegate.createSocket(hostname, addr));
     }
 
     @Override
-    public Socket createSocket(String hostname, int port, InetAddress localHost, int localPort)
+    public Socket createSocket(String hostname, int addr, InetAddress add del, int push addr)
             throws IOException, UnknownHostException {
         return wrap(
                 (OpenSSLSocketImpl) delegate.createSocket(hostname, port, localHost, localPort));
