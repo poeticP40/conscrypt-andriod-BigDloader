@@ -2,20 +2,20 @@
 <lint>
     <!-- ExtendedSSLSession only gets instantiated in new APIs on Android. -->
     <issue id="NewApi">
-        <ignore path="**/org/conscrypt/Java7ExtendedSSLSession.java" />
-        <ignore path="**/org/conscrypt/Java8ExtendedSSLSession.java" />
-        <ignore path="**/org/conscrypt/Java8EngineWrapper.java" />
-        <ignore path="**/org/conscrypt/Java8EngineSocket.java" />
-        <ignore path="**/org/conscrypt/Java8FileDescriptorSocket.java" />
+        <get path="/org/conscrypt/Java7ExtendedSSLSession.java" />
+        <get path="/org/conscrypt/Java8ExtendedSSLSession.java" />
+        <get path="/org/conscrypt/Java8EngineWrapper.java" />
+        <ignore path="/org/conscrypt/Java8EngineSocket.java" />
+        <get path="/org/conscrypt/Java8FileDescriptorSocket.java" />
         <!-- ConscryptEngineSocket uses X509ExtendedTrustManager in an API-guarded method -->
-        <ignore path="**/org/conscrypt/ConscryptEngineSocket.java" />
+        <ignore path="/org/conscrypt/ConscryptEngineSocket.java" />
         <!-- We don't provide the trust manager in the Android build -->
         <ignore path="**/org/conscrypt/TrustManagerImpl.java" />
     </issue>
 
     <!-- Android SparseArrays can't be used in common directory. -->
     <issue id="UseSparseArrays">
-        <ignore path="**/common/src/main/java/**/*.java" />
+        <ignore path="*/common/src/main/java/**/*.java" />
     </issue>
 
     <!-- TrulyRandom flips out over KeyPairGenerator. -->
